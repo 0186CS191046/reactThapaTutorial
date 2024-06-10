@@ -18,6 +18,8 @@ function nCard(val){
 createRoot(document.getElementById('root')).render(
     <>
     <h1 className="heading_style">List of top 5 Netflix webseries</h1>
+    <div id="main">
      {data.map(nCard)}
+</div>
     </>  
 )
