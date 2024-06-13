@@ -1,7 +1,7 @@
 import React from "react";
 
-function Heading(){
-    return <h1>Hii Kajal</h1>
+function Heading(props){
+    return <h3>{props.sname}</h3>
 }
 
 export default Heading;
