@@ -1,18 +1,22 @@
 import React from "react";
-import Netflix from "./Netflix";
-import Amazon from "./Amazon";
+import SlotM from './SlotMach'
 
-const favSeries = 'netflix'
+const App = (props)=>{
+   return(<>
+    <h1 className="heading_style">
+         🎰 Welcome to 
+        <span style={{fontWeight :'bold'}}>Slot machine game 🎰 </span> </h1>
 
-const App = () => {
-    return (
-        <>
-            <h1 className="heading_style">List of top 5 Netflix webseries</h1>
-            <div id="main">
-               {(favSeries == 'netflix')?<Netflix/>:<Amazon/>}
-            </div>
-        </>
+        <div className = "slotmachine">
+        <SlotM x= '😃'  y= '😃'  z= '😃'/>
+        <SlotM x= '😃'  y= '😛'  z= '😃'/>
+        <SlotM x= '🍎'  y= '🍎'  z= '🍎'/>
+        <SlotM x= '💑'  y= '💑'  z= '😃'/>
+
+        </div>
+    </>
+   
     )
 }
-
+ 
 export default App;
