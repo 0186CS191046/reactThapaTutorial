@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 
 const App = ()=> {
-    const [count,setCount] = useState(0)
-    const incrementNumber = ()=> {
-        setCount(count + 1)
+    let date = new Date().toLocaleTimeString()
+
+    const [currentdate, updatedDate] = useState(date)
+    const currentDate = ()=> {
+        let newdate = new Date().toLocaleTimeString()
+        updatedDate(newdate)
         console.log("clicked");
     }
     
     return (
         <>
-        <h1>{count}</h1><br/>
-        <button onClick={incrementNumber}>Click me</button>
+        <h1>{currentdate}</h1><br/>
+        <button onClick={currentDate}>get Time</button>
         </>
     )
 }
