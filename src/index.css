@@ -1,211 +1,25 @@
-/* *{
-    margin:0;
-    padding:0;
-    background-color: #ecdfdf;
-}
-
-.cards{
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: #e0dcd7;
-    display: inline-block;
-    margin: 48px 70px;
-    width: 22%;
-
-}
-.card{
-    margin: 3px 5px;
-}
-.card__img{
-    width: 100%;
-    height: 235px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-
-}
-.card__info{
-    background-color: #fff;
-    border-bottom-left-radius:12px ;
-    border-bottom-right-radius:12px ;
-    padding:16px 24px 24px 24px;
-    background-color: #fff;
-}
-
-.card__category{
-    font-family: "Open Sans", sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2px;
-    color:#868686;
-    background-color: #fff;
-}
-
-.card__title{
-    font-family: "Open Sans", sans-serif;
-    margin-top: 5px;
-    background-color: #fff;
-    margin-bottom: 10px;
-    text-transform: capitalize;
-
-}
-
-.text{
-    width: 133px;
-    margin: 5px;
-    padding: 5px;
-    background-color:#0d0000;
-    color:white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#main{
-    display:flex;
-    flex-wrap: wrap;
-} */
-/* 
-.card:hover{
-    box-shadow: 0px 30px 18px rgba(0,0,0,0.1);
-    transform: scale(1.05,1.05);
-} */
-
-.heading_style{
-    padding: 30px 0;
-    text-align: center;
-    font-family: "Open Sans", sans-serif;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    color:#868686;font-size: 1.5rem;
-    background-color: #fff;
-    margin-bottom: 30px;
-
-}
-.slotmachine{
-    display: block;
-    text-align: center;
-    border: 2px solid #1a1818;
-    width: auto;
-    margin: 10px 386px;
-}
-
-.card_inner{
-    margin: 20px 0px;
-    padding: 8px 5px;
-}
-/* 
-button{
-    padding: 5px 8px;
-    font-family: "Open Sans", sans-serif;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    color:#868686;
-    background-color: #fff;
-    outline: none;
-    border:1px solid black */
-
-/* } */
-
 *{
-    margin:0;
-    padding:0;
-    background-color: #ecdfdf;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: aliceblue;
 }
-/*  
-.cards{
+
+div {
     width: 100%;
-    height: auto;
-
-}
-.card{
-    margin: 6%;
-    transition:all 0.4s cubic-bezier(0.175,0.885,0,1);
-    background-color :#fff;
-    width:21.5%;
-    border-radius: 12px;
-    box-shadow: 0px 13px 10px -7px rgba(0,0,0,0.1);
-
-}
-.card__img{
-    width: 100%;
-    height: 235px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-
-}
-.card__info{
-    background-color: #fff;
-    border-bottom-left-radius:12px ;
-    border-bottom-right-radius:12px ;
-    padding:16px 24px 24px 24px;
-    background-color: #fff;
-}
-.card__category{
-    font-family: "Open Sans", sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2px;
-    color:#868686;
-    background-color: #fff;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card__title{
-    font-family: "Open Sans", sans-serif;
-    margin-top: 5px;
-    background-color: #fff;
-    margin-bottom: 10px;
-    text-transform: capitalize;
-
-}
-.text{
-    width: 133px;
-    margin: 5px;
-    padding: 5px;
-    background-color:#0d0000;
-    color:white;
+button{
+    padding: 15px 20px;
+    background: rgb(109, 71, 113);
+    color: white;
+    border: 2px solid wheat;
+    outline: none;
     border-radius: 5px;
+    text-transform: uppercase;
     cursor: pointer;
 }
-
-.card:hover{
-    box-shadow: 0px 30px 18px rgba(0,0,0,0.1);
-    transform: scale(1.05,1.05);
-}
-
-.heading_style{
-    padding: 30px 0;
-    text-align: center;
-    font-family: "Open Sans", sans-serif;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    color:#868686;font-size: 1.5rem;
-    background-color: #fff;
-    margin-bottom: 30px;
-
-}
-button{
-    padding: 5px 8px;
-    font-family: "Open Sans", sans-serif;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    color:#868686;
-    background-color: #fff;
-    outline: none;
-    border:1px solid black
-
-}
-
-#main{
-    display: flex;
-    flex-wrap: wrap;
-} */

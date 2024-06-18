@@ -1,22 +1,18 @@
-import React from "react";
-import SlotM from './SlotMach'
+import React, { useState } from "react";
 
-const App = (props)=>{
-   return(<>
-    <h1 className="heading_style">
-         🎰 Welcome to 
-        <span style={{fontWeight :'bold'}}>Slot machine game 🎰 </span> </h1>
-
-        <div className = "slotmachine">
-        <SlotM x= '😃'  y= '😃'  z= '😃'/>
-        <SlotM x= '😃'  y= '😛'  z= '😃'/>
-        <SlotM x= '🍎'  y= '🍎'  z= '🍎'/>
-        <SlotM x= '💑'  y= '💑'  z= '😃'/>
-
-        </div>
-    </>
-   
+const App = ()=> {
+    const [count,setCount] = useState(0)
+    const incrementNumber = ()=> {
+        setCount(count + 1)
+        console.log("clicked");
+    }
+    
+    return (
+        <>
+        <h1>{count}</h1><br/>
+        <button onClick={incrementNumber}>Click me</button>
+        </>
     )
 }
- 
+
 export default App;
