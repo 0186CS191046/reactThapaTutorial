@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 
 const App = ()=> {
-    let date = new Date().toLocaleTimeString()
+    let time = new Date().toLocaleTimeString()
+    const [ctime, updTime] = useState(time)
 
-    const [currentdate, updatedDate] = useState(date)
-    const currentDate = ()=> {
-        let newdate = new Date().toLocaleTimeString()
-        updatedDate(newdate)
-        console.log("clicked");
+    const updateTime = ()=> {
+        time = new Date().toLocaleTimeString()
+       updTime(time)
     }
-    
+    setInterval(updateTime, 1000);
     return (
         <>
-        <h1>{currentdate}</h1><br/>
-        <button onClick={currentDate}>get Time</button>
+        <h1>{ctime}</h1>
         </>
     )
 }
