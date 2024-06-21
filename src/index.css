@@ -11,11 +11,27 @@ div {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;;
+    font-size: 30px;
+    background-color: purple;
+    flex-direction: column;
+}
+input{
+width:50%;
+padding: 10px 20px;
+text-align: center;
+border: none;
+outline: none;
+margin:20px 0px;
+}
+h1{
+    color: white;
+    background: transparent;
+    text-shadow: 0px 2px 2px black;
+
 }
 
 button{
-    padding: 15px 20px;
+    padding: 6px 20px;
     background: rgb(109, 71, 113);
     color: white;
     border: 2px solid wheat;
@@ -23,4 +39,5 @@ button{
     border-radius: 5px;
     text-transform: uppercase;
     cursor: pointer;
+    line-height: 24px;
 }

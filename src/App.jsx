@@ -1,27 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const App = ()=> {
-    let purple = 'purple'
-    const [bg, setBg] = useState(purple)
-    const [name, setName] = useState('Click me')
-    const bgChange = ()=> {
-        console.log("clicked");
-        let colorchange = "grey"
-        setBg(colorchange)
-        setName("Ouch : 😮")
+    const [name, setname] = useState()
+    const [fullname, setFullname] = useState()
+    const textChange = (event)=> {
+        setname(event.target.value)
     }
-    const bgDoubleChange = ()=> {
-        console.log("double clicked");
-        setBg(purple)
-        setName("Ayyo : 😡")
+    const submitText = ()=> {
+        setFullname(name)
+
     }
-    return (
-    <>
-    <div style={{backgroundColor:bg}}>
-        {/* <button onClick={bgChange} onDoubleClick={bgDoubleChange}> {name} </button> */}
-        <button onMouseEnter={bgChange} onMouseLeavebg={bgDoubleChange}> {name} </button>
-    </div>
-    </>)
+    return(
+        <>
+        <div className="container">
+            <h1>Hello {fullname}</h1>
+            <input type="text" placeholder="Enter Your Name" defaultValue ="" value={name} onChange={textChange}/>
+            <button onClick={submitText}>Submit 👍</button>
+        </div>
+        </>
+    )
 }
 
 export default App;
