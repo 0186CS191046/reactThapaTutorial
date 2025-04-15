@@ -1,44 +1,48 @@
 import React, { useState } from "react";
+import Item from "./Item";
 import "./index.css"
 
 const App = () => {
-   const [fullName, setFullName] = useState({
-      fname: "",
-      lname: "",
-      email: "",
-      phone:""
-   })
 
-   const inputEvent = (e) => {
-      let { name, value } = e.target
+   const [inputList, setInputList] = useState("")
+   const [items,setItems] = useState([])
 
-      setFullName((preValue) => {
-         console.log("logValue--",preValue);
-         return {
-            ...preValue,
-            [name] : value
-      }
+   const addData = (event) => {
+      setInputList(event.target.value)
+   }
+
+   const listItems = (e)=> {
+      setItems((oldItems) =>{
+         return [...oldItems,inputList]
       })
+      setInputList("")
    }
 
-   const submitForm = (event) => {
-      event.preventDefault()
-   }
+   const removeItems = (id)=> {
+      console.log("deleted");
+      setItems((item)=> {
+         return item.filter((i,index)=>{
+            return id!==index
+         })
+      })
+  }
 
    return (
       <>
-         <form onSubmit={submitForm}>
-            <div className="block">
-               <h1>Hello {fullName.fname} {fullName.lname}</h1>
-               <p>{fullName.email}</p>
-               <p>{fullName.phone}</p>
-               <input type="text" placeholder="Enter your first_name" onChange={inputEvent} name="fname" value={fullName.fname} /><br />
-               <input type="text" placeholder="Enter your last_name" onChange={inputEvent} name="lname" value={fullName.lname} /><br />
-               <input type="email" placeholder="Enter your email" onChange={inputEvent} name="email" value={fullName.email} /><br />
-               <input type="number" placeholder="Enter your phone_number" onChange={inputEvent} name="phone" value={fullName.phone} />
-               <button type="submit">Click me ☺</button>
+         <div className="main-div">
+            <div className="center-div">
+               <br />
+               <h1>ToDo List</h1><br />
+               <input type="text" placeholder="Add an Items" onChange={addData} value={inputList} />
+               <button onClick={listItems}> + </button>
+               <ol>
+                  {/* <li>{items}</li> */}
+                  {items.map((i,index)=> {
+                     return <Item key={index} id = {index} list={i} onSelect={removeItems}/>
+                     })}
+               </ol>
             </div>
-         </form>
+         </div >
       </>
    )
 }
