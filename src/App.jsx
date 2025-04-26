@@ -1,50 +1,51 @@
 import React, { useState } from "react";
-import Item from "./Item";
+import Button from "@mui/material/Button";
+import AddIcon from '@mui/icons-material/Add';
 import "./index.css"
+import Item from "./Item";
 
 const App = () => {
+  const [item, setItem] = useState('')
+  const [arr, setArr] = useState([])
 
-   const [inputList, setInputList] = useState("")
-   const [items,setItems] = useState([])
+  const cutIt = (index) => {
+    setArr((preValue) => {
+      return preValue.map((value, id) => {
+        return id === index ? { ...value, isCut: true } : value;
+      });
+    });
+  };
 
-   const addData = (event) => {
-      setInputList(event.target.value)
-   }
-
-   const listItems = (e)=> {
-      setItems((oldItems) =>{
-         return [...oldItems,inputList]
-      })
-      setInputList("")
-   }
-
-   const removeItems = (id)=> {
-      console.log("deleted");
-      setItems((item)=> {
-         return item.filter((i,index)=>{
-            return id!==index
-         })
-      })
+  const setField = (e) => {
+    setItem(e.target.value)
   }
 
-   return (
-      <>
-         <div className="main-div">
-            <div className="center-div">
-               <br />
-               <h1>ToDo List</h1><br />
-               <input type="text" placeholder="Add an Items" onChange={addData} value={inputList} />
-               <button onClick={listItems}> + </button>
-               <ol>
-                  {/* <li>{items}</li> */}
-                  {items.map((i,index)=> {
-                     return <Item key={index} id = {index} list={i} onSelect={removeItems}/>
-                     })}
-               </ol>
-            </div>
-         </div >
-      </>
-   )
+  const addData = (e) => {
+    setArr((preValue) => {
+      return [...preValue, { text: item, isCut: false }]
+    })
+    setItem("")
+  }
+
+  return (
+    <>
+      <div className="main_div">
+        <div className="center_div">
+          <br />
+          <h1>ToDo List</h1>
+          <input type="text" placeholder="Add an Item" onChange={setField} value={item} />
+          <Button className="btn" > <AddIcon onClick={addData} /> </Button>
+
+          <ul>
+            {arr.map((ar, index) => {
+              {/* return <li>{ar}</li> */ }
+              return <Item key={index} item={ar.text} cutIt={()=>cutIt(index)} line={ar.isCut} />
+            })}
+          </ul>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default App

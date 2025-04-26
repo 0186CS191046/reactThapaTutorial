@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import DeleteIcon from '@mui/icons-material/Delete';
 
-const Item = (props)=> {
+const Item = (props) => {
 
-    return(
+    return (
         <>
-            <div className="list-item">
-            <span onClick={()=> {props.onSelect(props.id)}}>&#10006;</span>
-            <li>{props.list}</li>
+            <div><span onClick={props.cutIt}>
+                <DeleteIcon />
+            </span>
+                <li style={{textDecoration : props.line? 'line-through':'none'}}>{props.item}</li>
             </div>
         </>
-      
     )
 }
 
