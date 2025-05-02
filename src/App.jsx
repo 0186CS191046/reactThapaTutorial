@@ -1,41 +1,21 @@
-import React, { useState } from "react";
-import "./index.css"
-import Header from "./Header"
-import CreateNote from "./CreateNote";
-import Note from "./Note";
-import Footer from "./Footer";
+import React, { createContext } from "react"
+import CompA from "./CompA";
+
+const Fname = createContext()
+const Lname = createContext()
 
 const App = () => {
-  const [arr, setArr] = useState([])
-
-  const addNoteList = (data) => {
-    console.log("clicked",data);
-    setArr((prevData) => {
-      return [...prevData, data]
-    })
-  }
-
-  const deleteData = (id)=> {
-    setArr((prevData)=>{
-    const updatedArray = prevData.filter((curr, index) => index !== id);
-    return updatedArray;
-    })
-  }
-
   return (
     <>
-      <Header />
-      <CreateNote noteList={addNoteList} />
-      {/* <Note /> */}
-      {arr.map((note, index) => {
-        console.log("---",note)
-        return (<Note id={index} key={index} title={note.title} 
-        description={note.description}
-        deleteItem = {deleteData} />)
-      })}
-      <Footer />
+      <Fname.Provider value={"Kajal"}>
+        <Lname.Provider value={"Tiwari"}>
+          <CompA />
+        </Lname.Provider>
+      </Fname.Provider>
+
     </>
   )
 }
 
-export default App
+export default App;
+export { Fname, Lname }  
