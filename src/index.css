@@ -4,54 +4,96 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: aliceblue;
 }
 
-.main_div{
-  width: 50%;
-  background-color: #e4e1dd;
-  margin: auto;
-  height: 80vh;
-  margin-top: 5%;
-  padding: 5px;
-  border-radius: 10px;
-}
-
-h1{
-  text-align: center;
+.header {
   font-size: 2rem;
   text-transform: capitalize;
-  margin: 10px 2px;
+  background-color: #cad2cf;
+  padding: 20px;
+  box-shadow: 2px 1px 2px black;
 }
 
-.main-heading{
-  background-color: #e5e8e8;
-  width: 80%;
-  margin: auto;
-  margin-top:5px;
+.main-heading {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.plus{
-  margin: 2px;
-  padding: 5px;
-  font-size: 20px;
-  font-weight: bold;
-  display: inline-block;
-  cursor: pointer;
-  background-color: #b5bbbf;
-  border-radius: 50%;
-  width: 27px;
+.main-heading form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.main-heading input[type="text"],
+.main-heading textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-heading input[type="text"]:focus,
+.main-heading textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
+}
+
+footer {
   text-align: center;
+  padding: 20px;
+  background-color: #2c3e50;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
 }
 
-h3{
-  display: inline;
+.footer {
+  margin: 0;
 }
 
-.answer{
-  width: 80%;
-  margin: auto;
-  background-color: azure;
-  padding: 10px 6px;
+.add-btn {
+  position: absolute;
+  background-color: #4a90e2 !important;
+  color: white;
+  border-radius: 50%;
+  float: right;
+  margin-top: 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
+
+.add-btn:hover {
+  background-color: #3b7dc4 !important;
+}
+
+.note{
+  background-color: #d5d8db;
+  margin: 3%;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 15px;
+  width: 25%;
+  height: 100px;
+}
+
+.deleteBtn{
+  float: right;
+  color:  #3b7dc4;
+}
+
+.deleteBtn:hover{
+  color:  rgb(228, 166, 166);
+}
+
