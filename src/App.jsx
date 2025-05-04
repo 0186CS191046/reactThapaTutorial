@@ -1,21 +1,38 @@
 import React, { useEffect, useState } from "react"
+import axios from "axios"
 
 const App = () => {
-  const [num, setNum] = useState(0)
-  const [nums, setNums] = useState(0)
+  const [num, setNum] = useState(1)
+  const [ name, setName] = useState()
+  const [ moves, setMoves] = useState()
+
   useEffect(() => {
-    alert("i am clicked")
-  },[nums])
+    async function getData(){
+      const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
+      setName(res.data.name)
+      setMoves(res.data.moves.length)
+      
+    }
+
+    getData()
+  })
 
   return (
     <>
-      <button onClick={() => {
-        setNum(num + 1)
-      }}>click {num} times</button>
-      <br/>
-      <button onClick={() => {
-        setNums(nums + 1)
-      }}>click {nums} times</button>
+      <h1>
+        You choose {num} value
+      </h1>
+      <h2>My name is {name}</h2>
+      <h3>My moves are {moves}</h3>
+      <select onChange={(e)=>{
+        setNum(e.target.value)
+      }}>
+        <option value="1">1</option>
+        <option value="25">25</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
     </>
   )
 }
