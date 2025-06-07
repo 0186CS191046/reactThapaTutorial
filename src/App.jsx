@@ -4,6 +4,7 @@ import About from "./About";
 import Service from "./Service" 
 import Contact from "./Contact";
 import Error from "./Error";
+import User from "./User";
 import {Routes , Route} from "react-router-dom"
 import Navbar from "./Navbar";
 
@@ -12,11 +13,11 @@ const App = () => {
 return (
   <>
   <Routes>
-    <Route path="/" element= {<Navbar/>}/>
-    <Route path="/about" element= {<About/>}/>
+    <Route path="/" element= {<Navbar />}/>
+    <Route path="/about" element= {<About name="about"/>}/>
     <Route path="/contact" element= {<Contact/>}/>
-    <Route path="/service" element= {<Service/>}/>
-    <Route path="/contact/name" element={<Error/>}/>
+    <Route path="/user" element= {<User/>}/>
+    <Route path="/user/:fname/:lname?" element={<User/>}/>
     <Route path ="*" element={<Error/>}/>
 
   </Routes> 

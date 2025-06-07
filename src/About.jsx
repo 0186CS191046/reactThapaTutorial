@@ -1,11 +1,11 @@
 import React from "react";
 import Navbar from "./Navbar";
 
-const About = ()=> {
+const About = (props)=> {
     return (
         <>
         <Navbar/>
-            <h1>This is about page</h1>
+            <h1>This is {props.name} page</h1>
         </>
     )
 }
