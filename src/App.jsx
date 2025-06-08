@@ -7,6 +7,7 @@ import Error from "./Error";
 import User from "./User";
 import {Routes , Route} from "react-router-dom"
 import Navbar from "./Navbar";
+import Search from "./Search";
 
 const App = () => {
    
@@ -17,6 +18,7 @@ return (
     <Route path="/about" element= {<About name="about"/>}/>
     <Route path="/contact" element= {<Contact/>}/>
     <Route path="/user" element= {<User/>}/>
+    <Route path="/search" element = {<Search/>}/>
     <Route path="/user/:fname/:lname?" element={<User/>}/>
     <Route path ="*" element={<Error/>}/>
 

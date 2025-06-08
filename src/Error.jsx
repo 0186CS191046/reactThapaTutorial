@@ -5,7 +5,8 @@ const Error = ()=>{
     return (
         <>
         <Navbar/>
-            <h1>Oops! page not found</h1>
+            <h1>404 ! Not Found </h1>
+            <p>Sorry ! This page is not exist in our site</p>
         </>
     )
 }

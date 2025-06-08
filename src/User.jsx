@@ -1,11 +1,11 @@
 import React from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams ,useNavigate} from "react-router-dom";
 import Navbar from "./Navbar";
 
 const User = ()=>{
     const {fname, lname} = useParams()
     const location = useLocation()
-    console.log(":location",location);
+    const history = useNavigate()
     
     return(
         <>
@@ -13,7 +13,7 @@ const User = ()=>{
         <h1>This is user page {fname} {lname}</h1>
         <p>This is my location {location.pathname}</p>
         {location.pathname === `/user/kajal/kumari`?
-        (<button onClick={()=>alert("you are good")}>Click me</button>) : null}
+        (<button onClick={()=>history("/user/kajal/kumari")}>Click me</button>) : null}
         </>
     )
 }
